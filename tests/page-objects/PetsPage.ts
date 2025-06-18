@@ -15,6 +15,7 @@ export class PetsPage {
         // Handle the date picker using JavaScript evaluation
         const birthDateInput = this.page.locator('input#birthDate');
         await birthDateInput.evaluate((el, value) => {
+            // @ts-ignore
             el.value = value;
             el.dispatchEvent(new Event('input'));
             el.dispatchEvent(new Event('change'));
